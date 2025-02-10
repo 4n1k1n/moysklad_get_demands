@@ -1,7 +1,7 @@
 <h1>Airflow DAG для обновления данных в DWH за определенное время</h1>
 
 <p>
-  Запрос <code>.../demands...</code> возвращает данные по отгрузкам и их позициям, что позволяет обновить две таблицы:
+  Запрос <code>f"https://api.moysklad.ru/api/remap/1.2/entity/demand?expand=positions&limit=100&fields=stock&filter=moment>={time_d}"</code> возвращает данные по отгрузкам и их позициям после заданной даты (<code>time_d</code>), что позволяет обновить две таблицы:
   <ul>
     <li><strong>demands</strong>: общая информация о отгрузках (1 строка — 1 отгрузка)</li>
     <li><strong>demand_positions</strong>: данные по позициям отгрузок (1 строка — 1 товар)</li>
